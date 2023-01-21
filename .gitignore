@@ -49,6 +49,13 @@ local.properties
 [Dd]ebug/
 [Rr]elease/
 x64/
+build/aux
+build/dev/install
+build/dev/log
+build/dev/build
+build/mcu/install
+build/mcu/log
+build/mcu/build
 build/
 [Bb]in/
 [Oo]bj/
@@ -195,7 +202,7 @@ $RECYCLE.BIN/
 *.egg
 *.egg-info
 dist/
-build/
+# build/
 eggs/
 parts/
 var/

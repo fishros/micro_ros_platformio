@@ -57,16 +57,31 @@ class Build:
         if os.path.exists(self.library_path):
             print("micro-ROS already built")
             return
+        # Delete build folders
+        shutil.rmtree(self.build_folder+"/dev/build", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/dev/install", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/dev/log", ignore_errors=True)
+
+        shutil.rmtree(self.build_folder+"/mcu/build", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/mcu/install", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/mcu/log", ignore_errors=True)
 
         self.check_env()
-        self.download_dev_environment()
+        # self.download_dev_environment()
         self.build_dev_environment()
-        self.download_mcu_environment()
+        # self.download_mcu_environment()
+        self.download_extra_packages()
         self.build_mcu_environment(meta, toolchain, user_meta)
         self.package_mcu_library()
 
         # Delete build folders
-        shutil.rmtree(self.build_folder, ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/dev/build", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/dev/install", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/dev/log", ignore_errors=True)
+
+        shutil.rmtree(self.build_folder+"/mcu/build", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/mcu/install", ignore_errors=True)
+        shutil.rmtree(self.build_folder+"/mcu/log", ignore_errors=True)
 
     def ignore_package(self, name):
         for p in self.mcu_packages:
