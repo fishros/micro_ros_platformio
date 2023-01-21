@@ -56,7 +56,7 @@ build/dev/build
 build/mcu/install
 build/mcu/log
 build/mcu/build
-build/
+# build/
 [Bb]in/
 [Oo]bj/
 

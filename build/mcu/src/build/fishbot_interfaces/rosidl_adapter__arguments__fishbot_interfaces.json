@@ -1,0 +1,6 @@
+{
+  "package_name": "fishbot_interfaces",
+  "non_idl_tuples": [
+    "/home/fishros/example14_custom_interface/extra_packages/fishbot_interfaces:srv/OledControl.srv"
+  ]
+}

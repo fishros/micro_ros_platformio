@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from fishbot_interfaces/srv/OledControl.srv
+// generated code does not contain a copyright notice
+
+
+module fishbot_interfaces {
+  module srv {
+    struct OledControl_Request {
+      int32 px;
+
+      int32 py;
+
+      string data;
+    };
+    struct OledControl_Response {
+      int32 result;
+    };
+  };
+};
